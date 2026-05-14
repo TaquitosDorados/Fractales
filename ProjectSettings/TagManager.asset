@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Trigger
+  - Color
+  - Size
+  - Destroy
   layers:
   - Default
   - TransparentFX
