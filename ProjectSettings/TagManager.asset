@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Queso
+  - Queso2
+  - Queso3
+  - Button
   layers:
   - Default
   - TransparentFX
