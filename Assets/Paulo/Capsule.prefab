@@ -170,3 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a510e43a10bf44e8a1201f101e7d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PenesinScript
+  changedColor: {r: 0, g: 1, b: 0.0022239685, a: 1}
+  movingSpeed: 5
+  gm: {fileID: 0}
