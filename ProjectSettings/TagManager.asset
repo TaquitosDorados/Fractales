@@ -8,6 +8,8 @@ TagManager:
   - Color
   - Size
   - Destroy
+  - Padrisimo
+  - Queso
   layers:
   - Default
   - TransparentFX
