@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Trigger
+  - Color
+  - Size
+  - Destroy
   - Padrisimo
   - Queso
   layers:
