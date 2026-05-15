@@ -5,9 +5,21 @@ TagManager:
   serializedVersion: 3
   tags:
   - HalfScreenCollision
+<<<<<<< HEAD
   - second_platform_trigger
   - third_platform_trigger
   - button
+=======
+  - Simba
+  - Muerte
+  - Small
+  - Trigger
+  - Color
+  - Size
+  - Destroy
+  - Padrisimo
+  - Queso
+>>>>>>> fcbdb171f5e0322de2b136d6037927c7a9c4cafa
   layers:
   - Default
   - TransparentFX
