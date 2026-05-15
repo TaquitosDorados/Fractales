@@ -2,15 +2,20 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.InputSystem;
 
 public class PenecinScript : MonoBehaviour
 {
     private SpriteRenderer sprite;
     private Color colorOG;
     public Color changedColor;
+    private float movingDirection;
+    public float movingSpeed = 5;
 
     private Rigidbody2D rb;
     private bool muerto = false;
+    public GameManager gm;
 
     [Header("Muerte")]
     public GameObject particulasPrefab;
@@ -24,14 +29,24 @@ public class PenecinScript : MonoBehaviour
         colorOG = sprite.color;
 
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = new Vector2(8f, 0f);
+    }
+
+    public void OnMove(InputValue valor)
+    {
+        movingDirection = valor.Get<float>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-}
+    }
+
+    private void FixedUpdate()
+    {
+        rb.linearVelocity = new Vector2(movingDirection * movingSpeed, rb.linearVelocityY);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (muerto) return;
@@ -48,6 +63,10 @@ public class PenecinScript : MonoBehaviour
         {
             muerto = true;
             Morir();
+        }
+        if (collision.CompareTag("Button"))
+        {
+            gm.startSpawn = !gm.startSpawn;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -67,7 +86,6 @@ public class PenecinScript : MonoBehaviour
             GameObject sonidoObj = new GameObject("SonidoMuerte");
             AudioSource audio = sonidoObj.AddComponent<AudioSource>();
             audio.clip = sonidoMuerte;
-            audio.spatialBlend = 0f;
             audio.Play();
             Destroy(sonidoObj, sonidoMuerte.length);
         }
