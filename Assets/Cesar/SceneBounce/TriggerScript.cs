@@ -46,7 +46,6 @@ public class TriggerScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Color"))
         {
-            Debug.Log("asdfasfd");
             sprite.color = new Color(0.1f,0.2f,0.3f,1f);
         }
         else if (collision.gameObject.CompareTag("Size"))
