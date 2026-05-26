@@ -12,6 +12,13 @@ public class PenecinScript : MonoBehaviour
     public Color changedColor;
     private float movingDirection;
     public float movingSpeed = 5;
+    private int jumps = 0;
+    private int maxJumps = 1;
+    private bool isGrounded;
+    private bool wasGrounded;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private float groundCheckRadius = 0.1f;
+    [SerializeField] private LayerMask groundLayer;
 
     private Rigidbody2D rb;
     private bool muerto = false;
@@ -35,11 +42,28 @@ public class PenecinScript : MonoBehaviour
     {
         movingDirection = valor.Get<float>();
     }
+    public void OnJump(InputValue valor)
+    {
+        if (jumps < maxJumps)
+        {
+            isGrounded = false;
+            jumps++;
+            rb.linearVelocityY = 10f;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
+        wasGrounded = isGrounded;
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
+        if(isGrounded && !wasGrounded)
+        {
+            jumps = 0;
+        }
+
+        wasGrounded = isGrounded;
     }
 
     private void FixedUpdate()
