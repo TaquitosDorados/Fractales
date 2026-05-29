@@ -1,4 +1,7 @@
+using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +11,21 @@ public class GameManager : MonoBehaviour
     public GameObject gObject;
     public float spawnTimer = 1;
     public bool startSpawn = false;
+    public static GameManager instance;
+    public int goldenPuzzlePieces = 0;
+    public TextMeshProUGUI counterTxt;
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,5 +55,12 @@ public class GameManager : MonoBehaviour
         Vector2 objectTransform = new Vector2(xRandom, yRandom);
         var newObject = Instantiate(gObject);
         newObject.transform.position = objectTransform;
+    }
+
+    public void AddPuzzlePiece()
+    {
+        goldenPuzzlePieces++;
+        Debug.Log("GoldenPieces: " + goldenPuzzlePieces);
+        counterTxt.text = "x"+goldenPuzzlePieces.ToString();
     }
 }
