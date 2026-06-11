@@ -1,14 +1,20 @@
 using UnityEngine;
+
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.InputSystem;
 
 public class PenesinScript : MonoBehaviour
 {
+    private Rigidbody2D rb;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Color ogColor;
     private float movingDirection;
 
     public Color changedColor;
+    public float movingSpeed = 5;
+    public GameManager gm;
     public float movingSpeed = 5;
     public GameManager gm;
 
