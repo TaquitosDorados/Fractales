@@ -14,9 +14,9 @@ TagManager:
   - Destroy
   - Padrisimo
   - Queso
+  - Button
   - Queso2
   - Queso3
-  - Button
   layers:
   - Default
   - TransparentFX
