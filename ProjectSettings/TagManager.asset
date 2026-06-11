@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - HalfScreenCollision
+  - second_platform_trigger
+  - third_platform_trigger
+  - button
   - Simba
   - Muerte
   - Small
