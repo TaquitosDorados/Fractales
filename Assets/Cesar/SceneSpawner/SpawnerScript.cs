@@ -12,7 +12,7 @@ public class SpawnerScript : MonoBehaviour
     private float movingDirection;
     public Color changedColor;
     public float movingSpeed = 5;
-    public GameManager gm;
+    public GameManager3 gm;
     public float jumpSpeed;
     private bool isJumping = false;
     private bool grounded = false;

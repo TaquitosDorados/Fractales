@@ -22,7 +22,7 @@ public class PenecinScript : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool muerto = false;
-    public GameManager gm;
+    public GameManager2 gm;
 
     [Header("Muerte")]
     public GameObject particulasPrefab;

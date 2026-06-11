@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager3 : MonoBehaviour
 {
     private float startTimer;
 
@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public float spawnerTime = 1;
     public bool startSpawn = false;
 
-    public static GameManager instance;
+    public static GameManager3 instance;
     public int goldenPuzzlePieces = 0;
     public TextMeshProUGUI contadorTxt;
 
