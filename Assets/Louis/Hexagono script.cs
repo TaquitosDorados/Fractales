@@ -10,7 +10,7 @@ public class Hexagonoscript : MonoBehaviour
     private float movingDirection;
     private AudioSource audiomuerte;
     public float movingSpeed = 5;
-    public Gamemanager gm;
+    public Gamemanager1 gm;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

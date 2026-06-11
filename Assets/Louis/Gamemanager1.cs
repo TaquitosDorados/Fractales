@@ -1,42 +1,27 @@
-using TMPro;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Gamemanager1 : MonoBehaviour
 {
     private float startTimer;
+
     public BoxCollider2D spawner;
-    public GameObject objetoPadrisimo;
+    public GameObject Objetopadrisimo;
     public float spawnerTime = 1;
     public bool startSpawn = false;
-
-    public static GameManager instance;
-
-    public int goldenPuzzlePieces = 0;
-    public TextMeshProUGUI contadorTxt;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Spawn();
         startTimer = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!startSpawn) return;
-
+        if (!startSpawn)
+        {
+            return;
+        }
         if (Time.time - startTimer >= spawnerTime)
         {
             Spawn();
@@ -45,7 +30,6 @@ public class GameManager : MonoBehaviour
     }
     private void Spawn()
     {
-
         Bounds limites = spawner.bounds;
 
         float xAleatorio = Random.Range(limites.min.x, limites.max.x);
@@ -54,15 +38,8 @@ public class GameManager : MonoBehaviour
 
         Vector2 objectTransform = new Vector2(xAleatorio, yAleatorio);
 
-        var newObject = Instantiate(objetoPadrisimo);
+        var newObject = Instantiate(Objetopadrisimo);
 
         newObject.transform.position = objectTransform;
-    }
-
-    public void AddPuzzlePiece()
-    {
-        goldenPuzzlePieces++;
-        
-        contadorTxt.text = ("x " + goldenPuzzlePieces);
     }
 }
