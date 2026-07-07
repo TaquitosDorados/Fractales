@@ -21,6 +21,8 @@ TagManager:
   - Piso
   - Queso2
   - Queso3
+  - Tile
+  - Piece
   layers:
   - Default
   - TransparentFX
