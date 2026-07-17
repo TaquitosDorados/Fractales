@@ -10,7 +10,7 @@ public class MovementScript : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    /*void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
@@ -35,5 +35,5 @@ public class MovementScript : MonoBehaviour
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
 
 
-    }
+    }*/
 }
