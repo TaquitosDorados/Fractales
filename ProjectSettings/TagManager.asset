@@ -23,6 +23,8 @@ TagManager:
   - Queso3
   - Tile
   - Piece
+  - White_tile
+  - Black_tile
   layers:
   - Default
   - TransparentFX
