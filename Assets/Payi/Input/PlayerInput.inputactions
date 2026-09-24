@@ -8,12 +8,12 @@
             "actions": [
                 {
                     "name": "Click",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "8d2b3c1e-d623-4876-97af-e8613c44ccf3",
-                    "expectedControlType": "",
+                    "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "MousePosition",
@@ -30,7 +30,7 @@
                     "name": "",
                     "id": "e0936082-a645-4f4d-b12d-560e6aaaff8d",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Hold(duration=0.01)",
                     "processors": "",
                     "groups": "",
                     "action": "Click",

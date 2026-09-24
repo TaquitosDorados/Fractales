@@ -17,18 +17,5 @@ public class DraggableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
-    
-    public void OnStartDrag()
-    {
-
-    }
-
-    public void OnStopDrag()
-    {
-
-    }
-
-
 }
