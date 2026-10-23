@@ -5,7 +5,8 @@ using UnityEngine.UIElements;
 
 public class DragAndDrop : MonoBehaviour
 {
-    [SerializeField] private PlayerInput playerInput;
+    public InputActionAsset inputActions;
+    public InputAction onRelease;
     [SerializeField] private Camera mainCamera;
     private Vector2 mouseWorldPosition;
     public DraggableObject draggableObject;
@@ -13,13 +14,28 @@ public class DragAndDrop : MonoBehaviour
     float objectX = 0;
     float objectY = 0;
 
+
+    private void OnEnable()
+    {
+        inputActions.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Disable();
+    }
+
+    private void Awake()
+    {
+        var gameActions = inputActions.FindActionMap("Gameplay");
+        onRelease = gameActions.FindAction("Click");
+    }
     private void Update()
     {
         if(holding)
         {
             draggingObject(draggableObject);
         }
-       
     }
 
     
@@ -39,8 +55,7 @@ public class DragAndDrop : MonoBehaviour
                 } else
                 {
                     holding = false;
-                    draggableObject.transform.position = draggableObject.transform.position;
-                    draggableObject = null; 
+                    draggableObject.manageCollision();
                 }
             }
         }

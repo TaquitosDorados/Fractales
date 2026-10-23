@@ -30,7 +30,7 @@
                     "name": "",
                     "id": "e0936082-a645-4f4d-b12d-560e6aaaff8d",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "Hold(duration=0.01)",
+                    "interactions": "Hold(duration=0.01),Press(pressPoint=0.01,behavior=1)",
                     "processors": "",
                     "groups": "",
                     "action": "Click",

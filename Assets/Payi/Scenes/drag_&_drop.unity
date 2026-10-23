@@ -149,8 +149,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74da0bab44c9e4047a01b49c539e76f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragAndDrop
-  playerInput: {fileID: 0}
+  inputActions: {fileID: -944628639613478452, guid: 1ae563fb933a6b94282ad12a09dd5a8d, type: 3}
+  onRelease:
+    m_Name: On Release
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 53c80689-3fee-4dc1-983c-e771eb4915d8
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   mainCamera: {fileID: 1701623711}
+  draggableObject: {fileID: 0}
+  holding: 0
 --- !u!4 &599718461
 Transform:
   m_ObjectHideFlags: 0
@@ -376,6 +387,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableObject
   isDraggable: 1
+  collisionDetected: 0
+  tileObject: {fileID: 0}
+  pieceObject: {fileID: 0}
+  tileX: 0
+  tileY: 0
   id: Red Block
 --- !u!1 &1701623709
 GameObject:
